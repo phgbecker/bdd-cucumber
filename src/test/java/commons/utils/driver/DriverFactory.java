@@ -17,7 +17,11 @@ public class DriverFactory {
 	}
 
 	private void createNewChromeDriverInstance() {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+		if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");			
+		} else {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+		}
 		driver = new ChromeDriver(Capabilities.chromeOptions());
 	}
 
