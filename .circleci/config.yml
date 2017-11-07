@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cselenium/standalone-chrome-debug
+      - image: selenium/standalone-chrome-debug
     steps:
       - checkout
 
