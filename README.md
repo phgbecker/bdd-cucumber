@@ -18,4 +18,4 @@ All scenarios are described with BDD and you can found them on path `src/test/re
 
 - Clone this project
 - On path `selenium-java` execute `mvn install`
-- Run all test with `mvn test`
+- Run all test with `mvn test -Dmaven.test.skip=false`
