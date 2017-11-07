@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cselenium/standalone-chrome-debug
     steps:
       - checkout
 
@@ -19,5 +19,5 @@ jobs:
             - ~/.m2
           key: m2-{{ checksum "pom.xml" }}
 
-      - run: chmod +x *
+      - run: cd /home/circleci/project/src/test/resources/drivers/ && chmod +x chromedriver
       - run: mvn test -Dmaven.test.skip=false
