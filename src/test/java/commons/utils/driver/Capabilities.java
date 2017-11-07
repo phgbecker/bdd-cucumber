@@ -1,4 +1,4 @@
-package commons;
+package commons.utils.driver;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeOptions;

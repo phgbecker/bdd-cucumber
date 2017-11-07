@@ -8,9 +8,9 @@ Funcionalidade: Login com autenticação interna
     Dado que eu acesso a pagina de login do SE Suite.
     Quando eu realizo o login utilizando como autenticação interna, o usuário <usuario> com a <senha>.
     Entao eu devo realizar o login com sucesso.
-       
+
     Exemplos: 
       | usuario    | senha  |
       | softexpert | 111111 |
-      | andre      | 111111 |
       | ctcbr      | 111111 |
+      | andre      | 111111 |

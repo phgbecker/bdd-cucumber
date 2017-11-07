@@ -8,9 +8,11 @@ import commons.utils.WaitElementUtils;
 public class BasePage {
 
 	protected WaitElementUtils wait;
+	protected WebDriver driver;
 	
 	public BasePage(WebDriver driver) {
-		wait = new WaitElementUtils(driver);
-		PageFactory.initElements(driver, this);
+		this.driver = driver;
+		wait = new WaitElementUtils(this.driver);
+		PageFactory.initElements(this.driver, this);
 	}
 }

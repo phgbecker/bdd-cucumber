@@ -12,6 +12,8 @@ public class LoginPage extends BasePage {
 		super(driver);
 	}
 
+	private final String urlPage = "https://bombril.softexpert.com/softexpert/login";
+
 	@FindBy(css = "#user")
 	private WebElement userInput;
 
@@ -20,6 +22,11 @@ public class LoginPage extends BasePage {
 
 	@FindBy(css = ".loginbtn")
 	private WebElement loginButton;
+
+	public LoginPage navitageToPage() {
+		driver.navigate().to(urlPage);
+		return this;
+	}
 
 	public LoginPage fillInUser(String user) {
 		userInput.sendKeys(user);
