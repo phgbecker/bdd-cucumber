@@ -22,7 +22,7 @@ public class DriverFactory {
 		} else {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
 		}
-		driver = new ChromeDriver(Capabilities.chromeOptions());
+		driver = new ChromeDriver(BrowserOptions.chrome());
 	}
 
 	public WebDriver getDriver() {
