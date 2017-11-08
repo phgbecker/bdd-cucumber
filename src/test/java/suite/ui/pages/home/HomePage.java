@@ -12,11 +12,19 @@ public class HomePage extends BasePage {
 		super(driver);
 	}
 	
+	@FindBy(css = "#dashTarget")
+	private WebElement mainPortal;
+	
 	@FindBy(css = "#companyLogo")
 	private WebElement companyLogo;
 	
+	public HomePage waitForHomeAreLoaded() {
+		wait.waitForVisibilityOf(mainPortal);
+		return this;
+	}
+	
 	public String isCorrectLogin() {
-		wait.waitForVisibilityOf(companyLogo);
+		waitForHomeAreLoaded();
 		return companyLogo.isDisplayed() ? "Login was successful" : "Login wasn't successful";
 	}
 

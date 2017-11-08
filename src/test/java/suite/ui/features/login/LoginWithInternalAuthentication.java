@@ -46,4 +46,11 @@ public class LoginWithInternalAuthentication {
 	public void euDevoRealizarOLoginComSucesso() {
 		home.isSuccessfullyLogin();
 	}
+	
+	@Dado("que eu realize o login no SE Suite com o usuário SoftExpert.")
+	public void iRealizeLoginWithSoftexpertUser() {
+		login.navigateToPage();
+		login.performInternalLogin("softexpert", "111111");
+		home.waitForHomeAreLoaded();
+	}
 }

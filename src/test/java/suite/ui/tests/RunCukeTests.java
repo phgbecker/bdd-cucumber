@@ -6,14 +6,13 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-		monochrome = true, 
+@CucumberOptions( 
 		features = "classpath:features",
 		glue = "suite/ui/features", 
 		plugin = { 
 				"pretty", 
-				"json:target/cucumber-report/cucumber.json", 
-				"rerun:target/rerun.txt"}
+				"json:target/cucumber-report/cucumber.json"}, 
+		tags = "~@wip"
 		)
 public class RunCukeTests {
 

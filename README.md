@@ -8,7 +8,7 @@ This project is just a place for me learn how automated UI with Java. If you hav
 
 All scenarios are described with BDD and you can found them on path `src/test/resources/features`
 
-## :rocket: Project roadmap
+## :rocket: Roadmap
 
 ### Done
 

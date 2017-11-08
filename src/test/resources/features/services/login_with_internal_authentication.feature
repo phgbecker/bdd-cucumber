@@ -1,4 +1,5 @@
 # language: pt
+@acceptance @regression
 Funcionalidade: Login com autenticação interna
   A fim de acessar a aplicação SE Suite
   Como um usuário com permissão de acesso interno

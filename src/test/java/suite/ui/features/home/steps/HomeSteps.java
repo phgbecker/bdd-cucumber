@@ -18,4 +18,9 @@ public class HomeSteps {
 	public void isSuccessfullyLogin() {
 		assertThat(home.isCorrectLogin(), is("Login was successful"));
 	}
+	
+	public HomeSteps waitForHomeAreLoaded() {
+		home.waitForHomeAreLoaded();
+		return this;
+	}
 }
