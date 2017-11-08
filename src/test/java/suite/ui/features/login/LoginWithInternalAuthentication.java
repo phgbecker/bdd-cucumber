@@ -39,7 +39,7 @@ public class LoginWithInternalAuthentication {
 
 	@Quando("eu realizo o login utilizando como autenticação interna, o usuário (.*) com a (.*).")
 	public void euRealizoOLoginUtilizandoComoAutenticacaoInternaOUsuario(String user, String password) {
-		login.performLogin(user, password);
+		login.performInternalLogin(user, password);
 	}
 
 	@Então("eu devo realizar o login com sucesso.")

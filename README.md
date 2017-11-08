@@ -1,20 +1,29 @@
-# Selenium Java
+# SE Suite - Acceptance Tests
 
-## About
+## :information_source: About
 
-This project is just a place for me to learn how automated UI with Java. If you have any suggestions, please, let me know!
+This project is just a place for me learn how automated UI with Java. If you have any suggestions, please, let me know!
 
-## Documentation
+## :book: Documentation
 
 All scenarios are described with BDD and you can found them on path `src/test/resources/features`
 
-## Requirements
+## :rocket: Project roadmap
+
+### Done
+
+- Acceptance test written with BDD and running with Cucumber
+- Tests running only on Google Chrome yet.
+
+### Undone
+
+## :heavy_exclamation_mark: Requirements
 
 - JDK 8
 - Maven
 - Google Chrome
 
-## How to run
+## :arrow_forward: How to run
 
 - Clone this project
 - On path `selenium-java` execute `mvn install`

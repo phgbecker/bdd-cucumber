@@ -17,10 +17,15 @@ public class LoginSteps {
 		return this;
 	}
 	
-	public LoginSteps performLogin(String user, String password) {
+	public LoginSteps performInternalLogin(String user, String password) {
+		fillInAuthenticationInfo(user, password);
+		login.clickOnLogin();
+		return this;
+	}
+	
+	public LoginSteps fillInAuthenticationInfo(String user, String password) {
 		login.fillInUser(user);
 		login.fillInPassword(password);
-		login.clickOnLogin();
 		return this;
 	}
 
