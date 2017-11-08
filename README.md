@@ -17,6 +17,11 @@ All scenarios are described with BDD and you can found them on path `src/test/re
 
 ### Undone
 
+- Run Cucumber features in parallel
+- Run tests in differents browsers (Google Chrome, Mozila Firefox, Internet Explore, Safari)
+- Run mobile scenarios
+- Configurate to run with Selenium-Grid
+
 ## :heavy_exclamation_mark: Requirements
 
 - JDK 8

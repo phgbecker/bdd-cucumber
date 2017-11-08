@@ -7,11 +7,14 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features",
+		monochrome = true, 
+		features = "classpath:features",
 		glue = "suite/ui/features", 
 		plugin = { 
 				"pretty", 
-				"json:target/cucumber-report/cucumber.json" })
+				"json:target/cucumber-report/cucumber.json", 
+				"rerun:target/rerun.txt"}
+		)
 public class RunCukeTests {
 
 }
