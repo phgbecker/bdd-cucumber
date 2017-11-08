@@ -1,6 +1,4 @@
-package suite.ui.steps.login;
-
-import static org.junit.Assert.assertTrue;
+package suite.ui.features.login;
 
 import org.openqa.selenium.WebDriver;
 
@@ -10,21 +8,23 @@ import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
-import suite.ui.pages.home.HomePage;
-import suite.ui.pages.login.LoginPage;
+import suite.ui.features.home.steps.HomeSteps;
+import suite.ui.features.login.steps.LoginSteps;
 
 public class LoginWithInternalAuthentication {
 
 	private WebDriver driver;
 	private DriverFactory driverFactory;
 	
-	private LoginPage login;
-	private HomePage home;
+	private LoginSteps login;
+	private HomeSteps home;
 
 	@Before
 	public void beforeScenario() {
 		driverFactory = new DriverFactory();
 		driver = driverFactory.getDriver();
+		login = new LoginSteps(driver);
+		home = new HomeSteps(driver);
 	}
 
 	@After
@@ -34,20 +34,16 @@ public class LoginWithInternalAuthentication {
 
 	@Dado("que eu acesso a pagina de login do SE Suite.")
 	public void euAcessoAPaginaDeLoginDoSESuite() {
-		login = new LoginPage(driver);
-		login.navitageToPage();
+		login.navigateToPage();
 	}
 
 	@Quando("eu realizo o login utilizando como autenticação interna, o usuário (.*) com a (.*).")
 	public void euRealizoOLoginUtilizandoComoAutenticacaoInternaOUsuario(String user, String password) {
-		login.fillInUser(user);
-		login.fillInPassword(password);
-		login.clickOnLogin();
+		login.performLogin(user, password);
 	}
 
 	@Então("eu devo realizar o login com sucesso.")
 	public void euDevoRealizarOLoginComSucesso() {
-		home = new HomePage(driver);
-		assertTrue(home.isCorrectLogin());
+		home.isSuccessfullyLogin();
 	}
 }

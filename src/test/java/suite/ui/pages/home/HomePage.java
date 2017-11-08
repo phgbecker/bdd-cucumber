@@ -15,9 +15,9 @@ public class HomePage extends BasePage {
 	@FindBy(css = "#companyLogo")
 	private WebElement companyLogo;
 	
-	public boolean isCorrectLogin() {
+	public String isCorrectLogin() {
 		wait.waitForVisibilityOf(companyLogo);
-		return companyLogo.isDisplayed();
+		return companyLogo.isDisplayed() ? "Login was successful" : "Login wasn't successful";
 	}
 
 }
