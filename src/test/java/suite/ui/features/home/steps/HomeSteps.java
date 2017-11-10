@@ -15,7 +15,7 @@ public class HomeSteps {
 		home = new HomePage(driver);
 	}
 
-	public void isSuccessfullyLogin() {
+	public void checkIfLoginWasSuccessfully() {
 		assertThat(home.isCorrectLogin(), is("Login was successful"));
 	}
 	

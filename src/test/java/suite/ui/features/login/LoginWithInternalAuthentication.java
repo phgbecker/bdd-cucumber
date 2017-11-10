@@ -1,8 +1,8 @@
 package suite.ui.features.login;
 
-import org.openqa.selenium.WebDriver;
-
-import commons.utils.driver.DriverFactory;
+import commons.utils.driver.DriverManager;
+import commons.utils.driver.DriverManagerFactory;
+import commons.utils.driver.DriverType;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
@@ -13,23 +13,21 @@ import suite.ui.features.login.steps.LoginSteps;
 
 public class LoginWithInternalAuthentication {
 
-	private WebDriver driver;
-	private DriverFactory driverFactory;
-	
+	private DriverManager driverManager;
+
 	private LoginSteps login;
 	private HomeSteps home;
 
 	@Before
 	public void beforeScenario() {
-		driverFactory = new DriverFactory();
-		driver = driverFactory.getDriver();
-		login = new LoginSteps(driver);
-		home = new HomeSteps(driver);
+		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+		login = new LoginSteps(driverManager.getDriver());
+		home = new HomeSteps(driverManager.getDriver());
 	}
 
 	@After
 	public void afterScenario() {
-		driverFactory.destroy();
+		driverManager.quitDriver();
 	}
 
 	@Dado("que eu acesso a pagina de login do SE Suite.")
@@ -44,9 +42,9 @@ public class LoginWithInternalAuthentication {
 
 	@Então("eu devo realizar o login com sucesso.")
 	public void euDevoRealizarOLoginComSucesso() {
-		home.isSuccessfullyLogin();
+		home.checkIfLoginWasSuccessfully();
 	}
-	
+
 	@Dado("que eu realize o login no SE Suite com o usuário SoftExpert.")
 	public void iRealizeLoginWithSoftexpertUser() {
 		login.navigateToPage();
