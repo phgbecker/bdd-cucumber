@@ -18,6 +18,8 @@ jobs:
             - ~/.m2
           key: m2-{{ checksum "pom.xml" }}
 
+      - run: chmod +x *
+
       - run: mvn test -Dmaven.test.skip=false
 
       - store_test_results:
