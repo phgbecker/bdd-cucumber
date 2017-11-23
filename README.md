@@ -24,6 +24,8 @@ All scenarios are described with BDD and you can found them on path `src/test/re
 - Integrate with CircleCI
 - Tests running on Docker
 - Selenium-Grid with Docker
+- Driver with dependency injection
+- Tests running with different resolutions
 
 ## :heavy_exclamation_mark: Requirements
 

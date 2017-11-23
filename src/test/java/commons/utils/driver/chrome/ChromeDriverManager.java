@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 
 import commons.utils.driver.DriverManager;
+import commons.utils.extractors.GetDriverFile;
+import commons.utils.extractors.GetSO;
 
 public class ChromeDriverManager extends DriverManager {
 
@@ -15,8 +17,8 @@ public class ChromeDriverManager extends DriverManager {
 	protected void startService() {
 		if (chromeService == null) {
 			try {
-				chromeService = new ChromeDriverService.Builder()
-						.usingDriverExecutable(new File("src/test/resources/drivers/chromedriver.exe"))
+				chromeService = new ChromeDriverService.Builder().usingDriverExecutable(new File(
+						GetSO.isWindows() ? GetDriverFile.chromeDriverWindows() : GetDriverFile.chromeDriverLinux()))
 						.usingAnyFreePort().build();
 				chromeService.start();
 			} catch (Exception e) {
