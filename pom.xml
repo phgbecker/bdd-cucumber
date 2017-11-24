@@ -17,7 +17,7 @@
 		<maven.test.skip>true</maven.test.skip>
 
 		<junit.version>4.12</junit.version>
-		<selenium.java.version>3.6.0</selenium.java.version>
+		<selenium.java.version>3.7.1</selenium.java.version>
 		<info.cukes.version>1.2.5</info.cukes.version>
 		<guice.version>4.1.0</guice.version>
 	</properties>
