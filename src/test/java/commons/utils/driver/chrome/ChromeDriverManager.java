@@ -30,11 +30,6 @@ public class ChromeDriverManager extends DriverManager {
 	@Override
 	protected void createDriver() {
 		driver = new ChromeDriver(chromeService, BrowserOptions.chrome());
-		try {
-			throw new RuntimeException();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override
