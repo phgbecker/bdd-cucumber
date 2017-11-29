@@ -20,21 +20,7 @@
 		<selenium.java.version>3.7.1</selenium.java.version>
 		<info.cukes.version>1.2.5</info.cukes.version>
 		<guice.version>4.1.0</guice.version>
-		<courgette.version>1.4.1</courgette.version>
 	</properties>
-
-	<repositories>
-		<repository>
-			<id>maven</id>
-			<name>maven2</name>
-			<url>http://repo1.maven.org/maven2/</url>
-		</repository>
-		<repository>
-			<id>jcenter</id>
-			<name>jcenter</name>
-			<url>https://jcenter.bintray.com</url>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -66,11 +52,6 @@
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
 			<version>${guice.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.github.prashant-ramcharan</groupId>
-			<artifactId>courgette-jvm</artifactId>
-			<version>${courgette.version}</version>
 		</dependency>
 	</dependencies>
 
