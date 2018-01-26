@@ -24,6 +24,8 @@
 		<ocular.version>1.0.0.Alpha</ocular.version>
 		<aspectj.version>1.8.10</aspectj.version>
 		<allure.testng.version>2.0-BETA21</allure.testng.version>
+		<jackson.version>2.9.3</jackson.version>
+		<hamcrest.version>1.3</hamcrest.version>
 	</properties>
 
 	<dependencies>
@@ -56,6 +58,26 @@
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-testng</artifactId>
 			<version>${allure.testng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>${hamcrest.version}</version>
 		</dependency>
 	</dependencies>
 

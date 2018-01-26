@@ -5,11 +5,7 @@ import org.aeonbits.owner.Config.Sources;
 
 @Sources({ "classpath:conf/environment.properties" })
 public interface EnvironmentProperties extends Config {
-
-	@Key("base.url")
-	public String getBaseURL();
-	
-	@Key("browser")
-	public String getBrowser();
-
+	@Key(value = "host")
+	@DefaultValue("mark7.herokuapp.com")
+	String host();
 }

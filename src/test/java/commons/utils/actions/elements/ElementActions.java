@@ -3,7 +3,7 @@ package commons.utils.actions.elements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import commons.utils.actions.wait.WaitElementUtils;
+import commons.utils.actions.wait.WaitActions;
 
 /**
  * 
@@ -13,11 +13,15 @@ import commons.utils.actions.wait.WaitElementUtils;
 public class ElementActions {
 
 	private WebDriver driver;
-	private WaitElementUtils wait;
+	private WaitActions wait;
 
-	public ElementActions(WebDriver driver) {
+	private ElementActions(WebDriver driver) {
 		this.driver = driver;
-		wait = new WaitElementUtils(driver);
+		wait = WaitActions.init(driver);
+	}
+
+	public static ElementActions init(WebDriver driver) {
+		return new ElementActions(driver);
 	}
 
 	public void fillIn(WebElement element, String value) {

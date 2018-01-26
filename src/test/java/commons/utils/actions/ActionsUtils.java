@@ -3,8 +3,9 @@ package commons.utils.actions;
 import org.openqa.selenium.WebDriver;
 
 import commons.utils.actions.elements.ElementActions;
+import commons.utils.actions.extractor.ExtractorActions;
 import commons.utils.actions.keyboard.KeyboardActions;
-import commons.utils.actions.wait.WaitElementUtils;
+import commons.utils.actions.wait.WaitActions;
 
 /**
  * 
@@ -14,13 +15,19 @@ import commons.utils.actions.wait.WaitElementUtils;
 public class ActionsUtils {
 
 	private ElementActions element;
+	private ExtractorActions extractor;
 	private KeyboardActions keyboard;
-	private WaitElementUtils wait;
-	
-	public ActionsUtils(WebDriver driver) {
-		setElement(new ElementActions(driver));
-		setKeyboard(new KeyboardActions(driver));
-		setWait(new WaitElementUtils(driver));
+	private WaitActions wait;
+
+	private ActionsUtils(WebDriver driver) {
+		setElement(ElementActions.init(driver));
+		setExtractors(ExtractorActions.init(driver));
+		setKeyboard(KeyboardActions.init(driver));
+		setWait(WaitActions.init(driver));
+	}
+
+	public static ActionsUtils init(WebDriver driver) {
+		return new ActionsUtils(driver);
 	}
 
 	public ElementActions getElement() {
@@ -39,12 +46,20 @@ public class ActionsUtils {
 		this.keyboard = keyboard;
 	}
 
-	public WaitElementUtils getWait() {
+	public WaitActions getWait() {
 		return wait;
 	}
 
-	public void setWait(WaitElementUtils wait) {
+	public void setWait(WaitActions wait) {
 		this.wait = wait;
+	}
+
+	public ExtractorActions getExtractors() {
+		return extractor;
+	}
+
+	public void setExtractors(ExtractorActions extractor) {
+		this.extractor = extractor;
 	}
 
 }

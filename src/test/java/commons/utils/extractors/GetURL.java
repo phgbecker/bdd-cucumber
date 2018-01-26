@@ -11,10 +11,14 @@ import commons.properties.EnvironmentProperties;
  */
 public class GetURL {
 
-	private static EnvironmentProperties environment = ConfigFactory.create(EnvironmentProperties.class);
+	private EnvironmentProperties environment;
+	
+	public GetURL() {
+		environment = ConfigFactory.create(EnvironmentProperties.class);
+	}
 
-	public static String getBaseURL() {
-		return environment.getBaseURL();
+	public String getBaseURL() {
+		return "http://" + environment.host();
 	}
 
 }

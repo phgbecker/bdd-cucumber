@@ -1,28 +1,44 @@
 package ui.tests;
 
-import org.testng.Assert;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+
+import java.io.IOException;
+
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import commons.BaseSuiteTest;
+import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import ui.data.LoginData;
+import ui.pages.commons.navbar.NavbarPage;
+import ui.steps.LoginStep;
 
+/**
+ * 
+ * @author victor.santos
+ *
+ */
 @Epic(value = "Mark7")
-@Feature(value ="Login")
+@Feature(value = "Login")
 public class LoginTest extends BaseSuiteTest {
 
-	@Test(description = "Teste com sucesso")
-	public void firstTest() throws InterruptedException {
-		getDriver().navigate().to("https://www.google.com.br/");
-		Thread.sleep(1000);
-		Assert.assertTrue(true);
+	private LoginStep login;
+	private LoginData data;
+
+	@BeforeMethod(description = "Realizando configurações iniciais.")
+	public void beforeEachScenario() {
+		login = new LoginStep(getDriver());
 	}
 
-	@Test(description = "Teste com falha")
-	public void secondTest() throws InterruptedException {
-		getDriver().navigate().to("https://www.google.com.br/");
-		Thread.sleep(1000);
-		Assert.assertTrue(false);
+	@Test(description = "Quando é efetuado com sucesso.")
+	@Description(value = "Após login, tela de tarefa deve ser apresentada.")
+	public void whenLoginWasSuccessful() throws IOException {
+		data = LoginData.init("successful");
+		login.performLoginWith(data.getUsername(), data.getPassword());
+		assertThat(data.getUsername(), is(NavbarPage.init(getDriver()).getProfile().getProfileAddres()));
 	}
 
 }

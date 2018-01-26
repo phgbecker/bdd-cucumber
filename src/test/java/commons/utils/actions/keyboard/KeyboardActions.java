@@ -4,7 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import commons.utils.actions.wait.WaitElementUtils;
+import commons.utils.actions.wait.WaitActions;
 
 /**
  * 
@@ -13,10 +13,14 @@ import commons.utils.actions.wait.WaitElementUtils;
  */
 public class KeyboardActions {
 
-	private WaitElementUtils wait;
+	private WaitActions wait;
 
-	public KeyboardActions(WebDriver driver) {
-		wait = new WaitElementUtils(driver);
+	private KeyboardActions(WebDriver driver) {
+		wait = WaitActions.init(driver);
+	}
+
+	public static KeyboardActions init(WebDriver driver) {
+		return new KeyboardActions(driver);
 	}
 
 	public void enter(WebElement element) {

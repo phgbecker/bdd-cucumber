@@ -23,14 +23,14 @@ public class BaseSuiteTest {
 	@BeforeClass(description = "Abrindo o navegador e acessando a aplicação.")
 	public static void beforeAllScenarios() {
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
-		getDriver().navigate().to(GetURL.getBaseURL());
+		getDriver().navigate().to(new GetURL().getBaseURL());
 	}
 
 	@AfterMethod(description = "Caso cenário esteja com erro, evidência do problema será anexada abaixo.")
-	public static void afterEachMethod(ITestResult testResult) throws IOException {
+	public void afterEachMethod(ITestResult testResult) throws IOException {
 		if (testResult.getStatus() == ITestResult.FAILURE)
 			createAttachment(((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES));
-		getDriver().navigate().to(GetURL.getBaseURL());
+		getDriver().navigate().to(new GetURL().getBaseURL());
 	}
 
 	@Attachment(value = "Tela onde ocorreu o problema.")

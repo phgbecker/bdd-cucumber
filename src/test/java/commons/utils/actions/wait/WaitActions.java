@@ -11,23 +11,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author victor.santos
  *
  */
-public class WaitElementUtils {
+public class WaitActions {
 
 	private WebDriverWait wait;
 
-	public WaitElementUtils(WebDriver driver) {
+	private WaitActions(WebDriver driver) {
 		wait = new WebDriverWait(driver, 10);
 	}
 
+	public static WaitActions init(WebDriver driver) {
+		return new WaitActions(driver);
+	}
+
 	public void waitForVisibilityOf(WebElement element) {
-		wait
-			.ignoring(StaleElementReferenceException.class)
-			.until(ExpectedConditions.visibilityOf(element));
+		wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOf(element));
 	}
 
 	public void waitForElementToBeClickable(WebElement element) {
-		wait
-			.ignoring(StaleElementReferenceException.class)
-			.until(ExpectedConditions.elementToBeClickable(element));
+		wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(element));
 	}
 }
