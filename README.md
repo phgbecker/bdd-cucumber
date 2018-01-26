@@ -1,4 +1,4 @@
-# JUnit + Webdriver - Acceptance Tests
+# TestNG + Webdriver - Acceptance Tests
 
 ## :information_source: About
 

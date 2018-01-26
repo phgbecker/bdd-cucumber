@@ -1,32 +1,44 @@
 package commons;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.openqa.selenium.WebDriver;
+import java.io.IOException;
 
-import commons.screenshot.ScreenshotOnFailure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+
 import commons.utils.driver.DriverManager;
 import commons.utils.driver.DriverManagerFactory;
 import commons.utils.driver.DriverType;
-import io.qameta.allure.junit4.DisplayName;
+import commons.utils.extractors.GetURL;
+import io.qameta.allure.Attachment;
 
 public class BaseSuiteTest {
 
 	private static DriverManager driverManager;
 
-	@Rule
-	public ScreenshotOnFailure failure = new ScreenshotOnFailure(getDriver());
-
-	@BeforeClass
-	@DisplayName(value = "Abrindo o navegador e acessando a aplicação.")
+	@BeforeClass(description = "Abrindo o navegador e acessando a aplicação.")
 	public static void beforeAllScenarios() {
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
-		// getDriver().navigate().to(GetURL.getBaseURL());
+		getDriver().navigate().to(GetURL.getBaseURL());
 	}
 
-	@AfterClass
-	@DisplayName(value = "Fechando o navegador.")
+	@AfterMethod(description = "Caso cenário esteja com erro, evidência do problema será anexada abaixo.")
+	public static void afterEachMethod(ITestResult testResult) throws IOException {
+		if (testResult.getStatus() == ITestResult.FAILURE)
+			createAttachment(((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES));
+		getDriver().navigate().to(GetURL.getBaseURL());
+	}
+
+	@Attachment(value = "Tela onde ocorreu o problema.")
+	private static byte[] createAttachment(byte[] attachment) {
+		return attachment;
+	}
+
+	@AfterClass(description = "Fechando o navegador.")
 	public static void afterAllScenarios() {
 		driverManager.quitDriver();
 	}
