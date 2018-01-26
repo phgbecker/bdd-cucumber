@@ -2,6 +2,11 @@ package commons.utils.driver;
 
 import org.openqa.selenium.WebDriver;
 
+/**
+ * 
+ * @author victor.santos
+ *
+ */
 public abstract class DriverManager {
 
 	protected WebDriver driver;

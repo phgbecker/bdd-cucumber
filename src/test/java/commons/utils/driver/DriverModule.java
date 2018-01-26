@@ -5,6 +5,11 @@ import com.google.inject.Scopes;
 
 import commons.utils.driver.chrome.ChromeDriverManager;
 
+/**
+ * 
+ * @author victor.santos
+ *
+ */
 public class DriverModule extends AbstractModule {
 
 	@Override

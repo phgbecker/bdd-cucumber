@@ -1,4 +1,4 @@
-# SE Suite - Acceptance Tests
+# JUnit + Webdriver - Acceptance Tests
 
 ## :information_source: About
 
@@ -6,18 +6,17 @@ This project is just a place for me learn how automated UI with Java. If you hav
 
 ## :book: Documentation
 
-All scenarios are described with BDD and you can found them on path `src/test/resources/features`
+- In progress
 
 ## :rocket: Roadmap
 
 ### Done
 
-- Acceptance test written with BDD and running with Cucumber
-- Tests running only on Google Chrome yet.
+- 
 
 ### Undone
 
-- Run Cucumber features in parallel
+- More scenarios 
 - Run tests in differents browsers (Google Chrome, Mozila Firefox, Internet Explore, Safari)
 - Run mobile scenarios
 - Configurate to run with Selenium-Grid
@@ -26,6 +25,7 @@ All scenarios are described with BDD and you can found them on path `src/test/re
 - Selenium-Grid with Docker
 - Driver with dependency injection
 - Tests running with different resolutions
+- Allure report with Docker
 
 ## :heavy_exclamation_mark: Requirements
 
@@ -37,4 +37,4 @@ All scenarios are described with BDD and you can found them on path `src/test/re
 
 - Clone this project
 - On path `selenium-java` execute `mvn install`
-- Run all test with `mvn test -Dmaven.test.skip=false`
+- Run all test with `mvn test -D maven.test.skip=false`

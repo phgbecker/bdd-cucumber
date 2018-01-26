@@ -9,6 +9,11 @@ import commons.utils.driver.DriverManager;
 import commons.utils.extractors.GetDriverFile;
 import commons.utils.extractors.GetSO;
 
+/**
+ * 
+ * @author victor.santos
+ *
+ */
 public class ChromeDriverManager extends DriverManager {
 
 	private ChromeDriverService chromeService;
