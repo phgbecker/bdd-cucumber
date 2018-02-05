@@ -6,9 +6,9 @@ pipeline {
     
   }
   stages {
-    stage('Build') {
+    stage('Inicialize') {
       steps {
-        sh 'mvn clean install'
+        echo 'Hello Pipeline'
       }
     }
   }
