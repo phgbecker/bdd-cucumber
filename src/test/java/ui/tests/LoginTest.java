@@ -12,6 +12,7 @@ import commons.BaseSuiteTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import ui.data.LoginData;
 import ui.pages.commons.navbar.NavbarPage;
 import ui.steps.LoginStep;
@@ -33,6 +34,7 @@ public class LoginTest extends BaseSuiteTest {
 		login = new LoginStep(getDriver());
 	}
 
+	@Story(value = "Com sucesso")
 	@Test(description = "Quando é efetuado com sucesso.")
 	@Description(value = "Após login, tela de tarefa deve ser apresentada.")
 	public void whenLoginWasSuccessful() throws IOException {
