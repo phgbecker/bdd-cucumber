@@ -9,6 +9,7 @@ pipeline {
     stage('Inicialize') {
       steps {
         echo 'Hello Pipeline'
+        sh 'mvn clean '
       }
     }
   }
