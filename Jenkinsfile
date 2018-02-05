@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven:3.5-jdk-8-alpine'
-    }
-    
-  }
+  agent any
   stages {
     stage('Inicialize') {
       steps {
