@@ -4,7 +4,10 @@ Funcionalidade: Calculadora
   Eu quero validar meus calculos 
   Para que eu possa garantir que meus calculos estejam corretos
 
-  Esquema do Cenário: Adição.
+	Contexto: 
+		Dado que eu ligue a calculadora.
+
+  Esquema do Cenário: Realizar a soma entre dois valores.
     Quando adiciono o <valor_1> e o <valor_2>
     Então o resultado é <resultado>
 
@@ -14,7 +17,7 @@ Funcionalidade: Calculadora
       | 4       | 7      | 11        |
       | 3       | -5     | -2        |
 
-  Esquema do Cenário: Subtração.
+  Esquema do Cenário: Realizar a subtração entre dois valores.
     Quando subtraio o <valor_1> e o <valor_2>
     Então o resultado é <resultado>
 
@@ -24,7 +27,8 @@ Funcionalidade: Calculadora
       | 18      | 7      | 11        |
       | 3       | -5     | 8        |
 
-  Esquema do Cenário: Divisão.
+	@fast
+  Esquema do Cenário: Realizar a divisão entre dois valores.
     Quando divido o <valor_1> e o <valor_2>
     Então o resultado é <resultado>
 

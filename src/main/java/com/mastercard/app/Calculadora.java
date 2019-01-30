@@ -2,30 +2,7 @@ package com.mastercard.app;
 
 public class Calculadora {
 
-	private int firstNumber;
-	private int secondNumber;
 	private int result;
-
-	public Calculadora(int firstNumber, int secondNumber) {
-		this.setFirstNumber(firstNumber);
-		this.setSecondNumber(secondNumber);
-	}
-
-	public int getFirstNumber() {
-		return firstNumber;
-	}
-
-	public void setFirstNumber(int firstNumber) {
-		this.firstNumber = firstNumber;
-	}
-
-	public int getSecondNumber() {
-		return secondNumber;
-	}
-
-	public void setSecondNumber(int secondNumber) {
-		this.secondNumber = secondNumber;
-	}
 
 	public int getResult() {
 		return result;
@@ -35,19 +12,19 @@ public class Calculadora {
 		this.result = result;
 	}
 
-	public void adicao() {
-		this.setResult(getFirstNumber() + getSecondNumber());
+	public void adicao(int firstNumber, int secondNumber) {
+		this.setResult(firstNumber + secondNumber);
 	}
 
-	public void subtracao() {
-		this.setResult(getFirstNumber() - getSecondNumber());
+	public void subtracao(int firstNumber, int secondNumber) {
+		this.setResult(firstNumber - secondNumber);
 	}
 
-	public void divisao() {
-		this.setResult(getFirstNumber() / getSecondNumber());
+	public void divisao(int firstNumber, int secondNumber) {
+		this.setResult(firstNumber / secondNumber);
 	}
 
-	public void multiplicacao() {
-		this.setResult(getFirstNumber() * getSecondNumber());
+	public void multiplicacao(int firstNumber, int secondNumber) {
+		this.setResult(firstNumber * secondNumber);
 	}
 }
