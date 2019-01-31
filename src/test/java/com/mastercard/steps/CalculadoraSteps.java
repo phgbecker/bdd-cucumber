@@ -6,8 +6,6 @@ import static org.junit.Assert.assertThat;
 
 import com.mastercard.app.Calculadora;
 
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -40,19 +38,10 @@ public class CalculadoraSteps {
 	public void multiplico_o_e_o(Integer firstNumber, Integer secondNumber) {
 		calculadora.multiplicacao(firstNumber, secondNumber);
 	}
-	
-	@When("talk is cheap.")
-	public void a() {
-		
-	}
-	
-	@Then("Show me the CODE.")
-	public void b() {
-		
-	}
 
 	@Então("o resultado é {int}")
 	public void o_resultado_é(Integer result) {
 		assertThat(result, is(equalTo(calculadora.getResult())));
 	}
+
 }
