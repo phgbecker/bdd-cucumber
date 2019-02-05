@@ -38,7 +38,7 @@ Funcionalidade: Calculadora
       | 4       | 1      | 4         |
       | -55     | 11     | -5        |
 
-  Esquema do Cenário: Multiplicação.
+  Esquema do Cenário: Realizar a multiplicação entre dois valores.
     Quando multiplico o <valor_1> e o <valor_2>
     Então o resultado é <resultado>
 
