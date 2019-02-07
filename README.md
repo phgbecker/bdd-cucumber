@@ -2,7 +2,7 @@
 
 ## About
 
-A simple project used to exaplain the Cucumber framework.
+A simple project used to explain the Cucumber framework.
 
 ## Requirements
 
